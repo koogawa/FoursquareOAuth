@@ -8,10 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+@class FsqOAuthViewController;
+
+@protocol FsqOAuthViewControllerDelegate <NSObject>
+@optional
+- (void)fsqOAuthViewController:(FsqOAuthViewController *)viewController didSucceedWithAccessToken:(NSString *)token;
+- (void)fsqOAuthViewController:(FsqOAuthViewController *)viewController didFailWithError:(NSError *)error;
+@end
+
 @interface FsqOAuthViewController : UIViewController <UIWebViewDelegate>
 {
     UIWebView               *_webView;
 	UIActivityIndicatorView *_indicatorView;
 }
+
+@property (nonatomic, assign) id <FsqOAuthViewControllerDelegate>   delegate;
 
 @end

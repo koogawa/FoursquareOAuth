@@ -2,8 +2,8 @@
 //  AppDelegate.m
 //  FsqOAuthDemo
 //
-//  Created by koogawa on 2013/11/03.
-//  Copyright (c) 2013年 @koogawa. All rights reserved.
+//  Created by Kosuke Ogawa on 2013/11/03.
+//  Copyright (c) 2013 @koogawa. All rights reserved.
 //
 
 #import "AppDelegate.h"

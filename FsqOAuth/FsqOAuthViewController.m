@@ -14,6 +14,9 @@
 
 @implementation FsqOAuthViewController
 
+#define FSQ_AUTH_URI_FORMAT     @"https://foursquare.com/oauth2/authenticate?client_id=%@&response_type=token&redirect_uri=%@"
+#define FSQ_CLIENT_ID			@"(YOUR CLIENT ID)"
+#define FSQ_CALLBACK_URL        @"(YOUR CALLBACK URL)"
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,7 +36,8 @@
     // Webview for authentication
 	_webView = [[UIWebView alloc] init];
 	_webView.delegate = self;
-	_webView.frame = self.view.frame;
+	_webView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    _webView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 	_webView.scalesPageToFit = YES;
 	[self.view addSubview:_webView];
     
@@ -46,7 +50,7 @@
     
 	// Activity Indicator
 	_indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    _indicatorView.center = self.view.center;
+    _indicatorView.center = _webView.center;
 	[self.view addSubview:_indicatorView];
     
     // Start Authentication
@@ -86,9 +90,16 @@
     {
         // Auth Success!
         NSString *accessToken = [[urlString componentsSeparatedByString:@"="] lastObject];
-        NSLog(@"access_token = %@", accessToken);
         
-        [self dismissViewControllerAnimated:YES completion:nil];
+        if ([self.delegate respondsToSelector:@selector(fsqOAuthViewController:didSucceedWithAccessToken:)]) {
+            [self.delegate fsqOAuthViewController:self didSucceedWithAccessToken:accessToken];
+        }
+
+        if (![self isBeingDismissed]) {
+            [self dismissViewControllerAnimated:YES completion:NULL];
+        }
+        
+        return NO;
     }
     
 	return YES;
@@ -106,10 +117,15 @@
 	[_indicatorView stopAnimating];
 }
 
+// NOTE: This method is called if Redirect URI is http://localhost or urlsheme://
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 	[_indicatorView stopAnimating];
+    
+    if ([self.delegate respondsToSelector:@selector(fsqOAuthViewController:didFailWithError:)]) {
+        [self.delegate fsqOAuthViewController:self didFailWithError:error];
+    }
 }
 
 @end
