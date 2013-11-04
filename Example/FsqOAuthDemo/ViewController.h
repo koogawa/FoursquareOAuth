@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FsqOAuthViewController.h"
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextView *tokenTextView;
+
+- (IBAction)authButtonTapped:(id)sender;
+// TODO: LOGOUT
 @end

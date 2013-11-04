@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		211C2BEC18275CD500970C0F /* FsqOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 211C2BEB18275CD500970C0F /* FsqOAuthViewController.m */; };
 		2174371D18256E48007E9C2F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2174371C18256E48007E9C2F /* Foundation.framework */; };
 		2174371F18256E48007E9C2F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2174371E18256E48007E9C2F /* CoreGraphics.framework */; };
 		2174372118256E48007E9C2F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2174372018256E48007E9C2F /* UIKit.framework */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		211C2BEA18275CD500970C0F /* FsqOAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FsqOAuthViewController.h; path = ../FsqOAuth/FsqOAuthViewController.h; sourceTree = "<group>"; };
+		211C2BEB18275CD500970C0F /* FsqOAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FsqOAuthViewController.m; path = ../FsqOAuth/FsqOAuthViewController.m; sourceTree = "<group>"; };
 		2174371918256E48007E9C2F /* FsqOAuthDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FsqOAuthDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2174371C18256E48007E9C2F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2174371E18256E48007E9C2F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -79,10 +82,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		211C2BE918275C8200970C0F /* FsqOAuth */ = {
+			isa = PBXGroup;
+			children = (
+				211C2BEA18275CD500970C0F /* FsqOAuthViewController.h */,
+				211C2BEB18275CD500970C0F /* FsqOAuthViewController.m */,
+			);
+			name = FsqOAuth;
+			sourceTree = "<group>";
+		};
 		2174371018256E48007E9C2F = {
 			isa = PBXGroup;
 			children = (
 				2174372218256E48007E9C2F /* FsqOAuthDemo */,
+				211C2BE918275C8200970C0F /* FsqOAuth */,
 				2174374118256E48007E9C2F /* FsqOAuthDemoTests */,
 				2174371B18256E48007E9C2F /* Frameworks */,
 				2174371A18256E48007E9C2F /* Products */,
@@ -250,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2174373318256E48007E9C2F /* ViewController.m in Sources */,
+				211C2BEC18275CD500970C0F /* FsqOAuthViewController.m in Sources */,
 				2174372D18256E48007E9C2F /* AppDelegate.m in Sources */,
 				2174372918256E48007E9C2F /* main.m in Sources */,
 			);
@@ -334,7 +348,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -367,7 +381,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -381,6 +395,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FsqOAuthDemo/FsqOAuthDemo-Prefix.pch";
 				INFOPLIST_FILE = "FsqOAuthDemo/FsqOAuthDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -394,6 +409,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FsqOAuthDemo/FsqOAuthDemo-Prefix.pch";
 				INFOPLIST_FILE = "FsqOAuthDemo/FsqOAuthDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -460,6 +476,7 @@
 				2174374D18256E48007E9C2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2174374E18256E48007E9C2F /* Build configuration list for PBXNativeTarget "FsqOAuthDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +485,7 @@
 				2174375018256E48007E9C2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

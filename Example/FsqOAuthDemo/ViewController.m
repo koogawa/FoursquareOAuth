@@ -2,7 +2,7 @@
 //  ViewController.m
 //  FsqOAuthDemo
 //
-//  Created by koogawa on 2013/11/03.
+//  Created by @koogawa on 2013/11/03.
 //  Copyright (c) 2013年 @koogawa. All rights reserved.
 //
 
@@ -25,5 +25,18 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void)authButtonTapped:(id)sender
+{
+    NSLog(@"OK");
+    self.tokenTextView.text = @"aaa";
+    
+    // Open auth view
+    FsqOAuthViewController *viewController = [[FsqOAuthViewController alloc] init];
+    UINavigationController *naviController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    [self presentViewController:naviController animated:YES completion:nil];
+}
+
+// ログイン成功したらトークン表示
 
 @end
