@@ -1,4 +1,6 @@
 FoursquareOAuth
 ===============
 
-foursquare OAuth sample code
+foursquare OAuth simple code.
+
+Install
