@@ -49,3 +49,12 @@ Build Demo App
 =============================
 
 The demo application can be used as a simple reference for how to use the FoursquareOAuth. Build `Example/FsqOAuthDemo.xcodeproj`.
+
+ToDo
+=====
+
+Implement following method:
+
+```
+- (id)initWithKey:(const NSString *)aKey secret:(const NSString *)aSecret
+```
