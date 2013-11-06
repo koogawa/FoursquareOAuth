@@ -15,8 +15,8 @@
 @implementation FsqOAuthViewController
 
 #define FSQ_AUTH_URI_FORMAT     @"https://foursquare.com/oauth2/authenticate?client_id=%@&response_type=token&redirect_uri=%@"
-#define FSQ_CLIENT_ID			@"(YOUR CLIENT ID)"
-#define FSQ_CALLBACK_URL        @"(YOUR CALLBACK URL)"
+#define FSQ_CLIENT_ID			@"2QXWNUGJ0JUZRWIOHM14IBAUMZBECKD0KKRA1AXII2T4U45D"
+#define FSQ_CALLBACK_URL        @"http://localhost/"
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
