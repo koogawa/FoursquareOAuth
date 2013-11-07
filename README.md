@@ -56,5 +56,5 @@ ToDo
 Implement following method:
 
 ```
-- (id)initWithKey:(const NSString *)aKey secret:(const NSString *)aSecret
+- (id)initWithClientId:(const NSString *)clientId callback:(const NSString *)callback;
 ```
