@@ -18,6 +18,15 @@
 #define FSQ_CLIENT_ID			@"2QXWNUGJ0JUZRWIOHM14IBAUMZBECKD0KKRA1AXII2T4U45D"
 #define FSQ_CALLBACK_URL        @"http://localhost/"
 
+- (id)initWithClientId:(const NSString *)clientId callback:(const NSString *)callback
+{
+    self = [super init];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
