@@ -24,7 +24,9 @@
 
 @property (nonatomic, assign) id <FsqOAuthViewControllerDelegate>   delegate;
 
-// TODO: IMPREMENT
+@property (strong, readonly) const NSString *clienId;
+@property (strong, readonly) const NSString *callback;
+
 - (id)initWithClientId:(const NSString *)clientId callback:(const NSString *)callback;
 
 @end

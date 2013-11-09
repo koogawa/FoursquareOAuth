@@ -14,6 +14,9 @@
 
 @implementation ViewController
 
+#define FSQ_CLIENT_ID		@"(YOUR_CLIENT_ID)"
+#define FSQ_CALLBACK_URL    @"(YOUR_CALLBACK_URL)"
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -29,7 +32,8 @@
 - (IBAction)authButtonTapped:(id)sender
 {
     // Open auth view
-    FsqOAuthViewController *viewController = [[FsqOAuthViewController alloc] init];
+    FsqOAuthViewController *viewController = [[FsqOAuthViewController alloc] initWithClientId:FSQ_CLIENT_ID
+                                                                                     callback:FSQ_CALLBACK_URL];
     viewController.delegate = self;
     UINavigationController *naviController = [[UINavigationController alloc] initWithRootViewController:viewController];
     [self presentViewController:naviController animated:YES completion:nil];

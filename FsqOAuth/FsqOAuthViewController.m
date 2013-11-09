@@ -15,23 +15,14 @@
 @implementation FsqOAuthViewController
 
 #define FSQ_AUTH_URI_FORMAT     @"https://foursquare.com/oauth2/authenticate?client_id=%@&response_type=token&redirect_uri=%@"
-#define FSQ_CLIENT_ID			@"2QXWNUGJ0JUZRWIOHM14IBAUMZBECKD0KKRA1AXII2T4U45D"
-#define FSQ_CALLBACK_URL        @"http://localhost/"
 
 - (id)initWithClientId:(const NSString *)clientId callback:(const NSString *)callback
 {
     self = [super init];
     if (self) {
         // Custom initialization
-    }
-    return self;
-}
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+        _clienId = clientId;
+        _callback = callback;
     }
     return self;
 }
@@ -63,7 +54,7 @@
 	[self.view addSubview:_indicatorView];
     
     // Start Authentication
-    NSString *authenticateURLString = [NSString stringWithFormat:FSQ_AUTH_URI_FORMAT, FSQ_CLIENT_ID, FSQ_CALLBACK_URL];
+    NSString *authenticateURLString = [NSString stringWithFormat:FSQ_AUTH_URI_FORMAT, _clienId, _callback];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:authenticateURLString]];
     [_webView loadRequest:request];
 }
