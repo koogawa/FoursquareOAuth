@@ -10,15 +10,6 @@ Install
 
 1. Register your app to obtain its foursquare API credentials at [http://foursquare.com/developers/apps](http://foursquare.com/developers/apps).
 2. Add `FsqOAuthViewController.{h,m}` to your Xcode project.
-3. Add your client ID and callback URL scheme to your app's `FsqOAuthViewController.m` file.
-
-```
-@implementation FsqOAuthViewController
-
-#define FSQ_AUTH_URI_FORMAT     @"https://foursquare.com/oauth2/authenticate?client_id=%@&response_type=token&redirect_uri=%@"
-#define FSQ_CLIENT_ID			@"(YOUR CLIENT ID)"
-#define FSQ_CALLBACK_URL        @"(YOUR CALLBACK URL)"
-```
 
 Usage
 =====
@@ -27,7 +18,8 @@ The usage is very simple. You only need to display the FsqOAuthViewController.
 
 For example:
 ```
-FsqOAuthViewController *viewController = [[FsqOAuthViewController alloc] init];
+FsqOAuthViewController *viewController = [[FsqOAuthViewController alloc] initWithClientId:FSQ_CLIENT_ID
+                                                                                     callback:FSQ_CALLBACK_URL];
 viewController.delegate = self;
 UINavigationController *naviController = [[UINavigationController alloc] initWithRootViewController:viewController];
 [self presentViewController:naviController animated:YES completion:nil];
@@ -50,11 +42,7 @@ Build Demo App
 
 The demo application can be used as a simple reference for how to use the FoursquareOAuth. Build `Example/FsqOAuthDemo.xcodeproj`.
 
-ToDo
+Maintainer
 =====
 
-Implement following method:
-
-```
-- (id)initWithClientId:(const NSString *)clientId callback:(const NSString *)callback;
-```
+Kosuke Ogawa ([@koogawa](http://twitter.com/koogawa))
